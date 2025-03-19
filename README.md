@@ -68,9 +68,9 @@ This will start the Orchestrator Service, which should now be available on http:
 - **POST** `/orchestrator/register-employee`  
   Register a new employee.
 
-- **PUT** `/memberships/{uuid}/upgrade-membership`  
+- **PUT** `/orchestrator/memberships/{uuid}/upgrade-membership`  
   Upgrade a membership by using the UUID.
-- **PUT** `/memberships/{uuid}/downgrade-membership`  
+- **PUT** `/orchestrator/memberships/{uuid}/downgrade-membership`  
   Downgrade a membership by using the UUID.
 
 ### **Swagger Documentation**
