@@ -20,4 +20,7 @@ public interface MembershipServiceClient {
 
     @GetMapping
     List<MembershipDto> getAllMemberships();
+
+    @GetMapping("/{uuid}")
+    MembershipDto getMembershipById(@PathVariable("uuid") UUID uuid);
 }
