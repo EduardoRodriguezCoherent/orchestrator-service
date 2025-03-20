@@ -54,25 +54,51 @@ This will start the Orchestrator Service, which should now be available on http:
 
 ### **Orchestrator Service API Endpoints**
 
+  #### ***Gym Clubs*** 
 - **GET** `/orchestrator/clubs`  
-  Retrieve all clubs in the database.
+  Retrieve all clubs in the database.  
+- **GET** `/orchestrator/clubs/{id}`  
+  Retrieve details of a specific club by its ID.  
+- **POST** `/orchestrator/clubs/create-club`  
+  Create a new club and return the created club details.
+- **PUT** `/orchestrator/clubs/update-club`  
+  Update an existing club and return the updated details.
+
+  #### ***Customers***
 - **GET** `/orchestrator/customers`  
   Retrieve all customers in the database.
+- **GET** `/orchestrator/customers/{id}`  
+  Retrieve details of a specific customer by their ID.
+- **POST** `/orchestrator/customers/register-customer`  
+  Register a new customer without assigning them to a club.
+
+  #### ***Employees***
 - **GET** `/orchestrator/employees`  
   Retrieve all employees in the database.
+- **GET** `/orchestrator/employees/{id}`  
+  Retrieve details of a specific employee by their ID.
+- **POST** `/orchestrator/employees/register-employee`  
+  Create a new employee record and return the created employee details.
+- **PUT** `/orchestrator/employees/{id}`  
+  Update an existing employee’s details and return the updated employee.
+- **POST** `/orchestrator/employees/{id}/roles`  
+  Assign a role to an employee.
+- **DELETE** `/orchestrator/employees/{id}/roles`  
+  Remove a role from an employee.
+- **POST** `/orchestrator/employees/{employeeId}/assign-expertise`  
+  Assign an expertise area to an employee within a gym club.
+
+  #### ***Memberships***
 - **GET** `/orchestrator/memberships`  
   Retrieve all memberships in the database.
-
-- **POST** `/orchestrator/register-customer`  
-  Register a new customer.
-- **POST** `/orchestrator/register-employee`  
-  Register a new employee.
-
+- **GET** `/orchestrator/memberships/{uuid}`  
+  Retrieve details of a specific membership by its UUID.
 - **PUT** `/orchestrator/memberships/{uuid}/upgrade-membership`  
-  Upgrade a membership by using the UUID.
+  Upgrade a customer's membership to GOLD.
 - **PUT** `/orchestrator/memberships/{uuid}/downgrade-membership`  
-  Downgrade a membership by using the UUID.
+  Downgrade a customer's membership to BASIC.
 
+  
 ### **Swagger Documentation**
 You can find the swagger documentation in the following link:
 http://localhost:8077/swagger-ui/index.html
